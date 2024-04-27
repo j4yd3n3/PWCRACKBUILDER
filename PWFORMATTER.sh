@@ -38,9 +38,9 @@ linesDeleted=$(($totalLines-uniqueLines))
 #echo "Lines Deleted: $linesDeleted"
 #echo "Unique lines: $uniqueLines"
 
-cat $input_filename | uniq | awk 'BEGIN {FS=" "; OFS="_"} {for(i=1;i<=NF;i++) $i=$i; print}' > temp_file
-cat $input_filename | uniq >> temp_file
-cat $input_filename | uniq | tr -d ' ' >> temp_file
+uniq $input_filename | awk 'BEGIN {FS=" "; OFS="_"} {for(i=1;i<=NF;i++) $i=$i; print}' > temp_file
+uniq $input_filename >> temp_file
+uniq $input_filename | tr -d ' ' >> temp_file
 
 sort temp_file | tr '[:upper:]' '[:lower:]' | uniq
 
