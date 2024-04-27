@@ -13,14 +13,9 @@
 
 # Notice how all of the outputted formats are
 # lowercase. It is expected that the user will
-# apply some of their own toggling rules in 
+# apply some sort of toggle rules in 
 # conjunction with rules of their choice
 
-
-#Start Script
-
-
-# Check if an input filename is provided
 # Check if an input filename is provided
 if [ $# -eq 0 ]; then
   echo "No arguments provided. Please provide a filename."
